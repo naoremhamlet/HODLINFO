@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title></title>
+</head>
+<body>
+    <div>
+        <div class="left">
+            <div class="logo">HODLINFO<span>.COM</span></div>
+            <div class="power__logo">Powered By <span>Finstreet</span></div>
+        </div>
+        <div class="middle">
+            <select class="select__box">\
+                <option value="" selected>INR</option>
+            </select>
+            <select class="select__box">
+                <option value="" selected>BTC</option>
+            </select>
+        </div>
+        <div class="right">
+            <span class="round__no">58</span>
+            <span class="connect"><i class="fa">&#xf2c6;</i>Connect Telegram</span>
+            <span>
+                <input type="checkbox" id="switch" class="checkbox" checked/>
+                <label for="switch" class="toggle"></label>
+            </span>
+        </div>
+    </div>
+    <div class="table__div">
+        <table cellpadding="10" cellspacing="0">
+            <thead>
+                <td>#</td>
+                <td>name</td>
+                <td>Last</td>
+                <td>Buy / Sell Price</td>
+                <td>volume</td>
+                <td>base_unit</td>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < data.length; i++){ %>
+                    <tr>
+                        <td><%= i+1 %></td>
+                        <td><%= data[i].name %></td>
+                        <td><%= data[i].last %></td>
+                        <td><%= data[i].buy %> / <%= data[i].sell %></td>
+                        <td><%= data[i].volume %></td>
+                        <td><%= data[i].base_unit %></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
